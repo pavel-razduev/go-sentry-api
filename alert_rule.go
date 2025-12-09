@@ -18,12 +18,14 @@ var (
 // Refer to https://github.com/getsentry/sentry/tree/master/src/sentry/rules/conditions or GUI
 // to get detailed information.
 type AlertRuleCondition struct {
-	ID        string      `json:"id,omitempty"`
-	Name      string      `json:"name,omitempty"`
-	Interval  string      `json:"interval,omitempty"` // 1m, 1w, 30d etc
-	Value     interface{} `json:"value,omitempty"`
-	Attribute string      `json:"attribute,omitempty"`
-	Key       string      `json:"key,omitempty"`
+	ID                 string      `json:"id,omitempty"`
+	Name               string      `json:"name,omitempty"`
+	Interval           string      `json:"interval,omitempty"` // 1m, 1w, 30d etc
+	Value              interface{} `json:"value,omitempty"`
+	Attribute          string      `json:"attribute,omitempty"`
+	Key                string      `json:"key,omitempty"`
+	ComparisonInterval string      `json:"comparisonInterval,omitempty"`
+	ComparisonType     string      `json:"comparisonType,omitempty"`
 }
 
 type SettingValue struct {
