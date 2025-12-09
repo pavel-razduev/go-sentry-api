@@ -14,6 +14,18 @@ var (
 	AlertRuleMatchNone = alertRuleMatchPolicy("none")
 )
 
+type RequiredFiled struct {
+	Type        string `json:"type,omitempty"`
+	Label       string `json:"label,omitempty"`
+	Name        string `json:"name,omitempty"`
+	Placeholder string `json:"placeholder,omitempty"`
+}
+type FormField struct {
+	Type           string          `json:"type,omitempty"`
+	Uri            string          `json:"uri,omitempty"`
+	RequiredFields []RequiredFiled `json:"required_fields,omitempty"`
+}
+
 // AlertRuleCondition represents alert rule condition.
 // Refer to https://github.com/getsentry/sentry/tree/master/src/sentry/rules/conditions or GUI
 // to get detailed information.
@@ -26,6 +38,8 @@ type AlertRuleCondition struct {
 	Key                string      `json:"key,omitempty"`
 	ComparisonInterval string      `json:"comparisonInterval,omitempty"`
 	ComparisonType     string      `json:"comparisonType,omitempty"`
+	Uuid               string      `json:"uuid,omitempty"`
+	FormFields         FormField   `json:"formFields,omitempty"`
 }
 
 type SettingValue struct {
