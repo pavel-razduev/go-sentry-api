@@ -26,13 +26,20 @@ type AlertRuleCondition struct {
 	Key       string      `json:"key,omitempty"`
 }
 
+type SettingValue struct {
+	Key   string `json:"key,omitempty"`
+	Value string `json:"value,omitempty"`
+}
+
 // AlertRuleAction represents alert rule action.
 // Refer to https://github.com/getsentry/sentry/tree/master/src/sentry/rules/actions or GUI
 // to get detailed information.
 type AlertRuleAction struct {
-	ID      string `json:"id,omitempty"`
-	Name    string `json:"name,omitempty"`
-	Service string `json:"service,omitempty"`
+	ID                  string         `json:"id,omitempty"`
+	Name                string         `json:"name,omitempty"`
+	Service             string         `json:"service,omitempty"`
+	Settings            []SettingValue `json:"settings,omitempty"`
+	HasSchemaFormConfig bool           `json:"hasSchemaFormConfig,omitempty"`
 }
 
 type AlertRule struct {
