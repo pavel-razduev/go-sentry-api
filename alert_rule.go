@@ -14,7 +14,7 @@ var (
 	AlertRuleMatchNone = alertRuleMatchPolicy("none")
 )
 
-type RequiredFiled struct {
+type RequiredField struct {
 	Type        string `json:"type,omitempty"`
 	Label       string `json:"label,omitempty"`
 	Name        string `json:"name,omitempty"`
@@ -23,7 +23,7 @@ type RequiredFiled struct {
 type FormField struct {
 	Type           string          `json:"type,omitempty"`
 	Uri            string          `json:"uri,omitempty"`
-	RequiredFields []RequiredFiled `json:"required_fields,omitempty"`
+	RequiredFields []RequiredField `json:"required_fields,omitempty"`
 }
 
 // AlertRuleCondition represents alert rule condition.
